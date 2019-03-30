@@ -1,0 +1,55 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion Versions.target_sdk
+    defaultConfig {
+        applicationId ApplicationId.application_id
+        minSdkVersion Versions.min_sdk
+        targetSdkVersion Versions.target_sdk
+        versionCode Releases.version_code
+        versionName Releases.version
+        vectorDrawables.useSupportLibrary = true
+        testInstrumentationRunner Config.testRunner
+        multiDexEnabled true
+
+    }
+    buildTypes {
+        debug{
+            buildConfigField 'String', "AppCenterKey", AppCenterKey
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    buildToolsVersion '28.0.3'
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation project(Modules.data)
+    implementation project(Modules.domain)
+    implementation Libraries.kotlin_stdlib
+    implementation SupportLibraries.appcompat_v7
+    implementation SupportLibraries.cardview_v7
+    implementation SupportLibraries.recyclerview_v7
+    implementation SupportLibraries.support
+    implementation SupportLibraries.support_vector
+    implementation SupportLibraries.design
+    testImplementation TestLibraries.junit
+    androidTestImplementation TestLibraries.runner
+    androidTestImplementation TestLibraries.espresso
+    implementation Libraries.firebaseCloudMessaging
+    implementation Libraries.appCenterCrashlytics
+    implementation Libraries.appCenterAnalytics
+    implementation Libraries.glide
+    implementation Libraries.gson
+    kapt Libraries.glide_compiler
+}
