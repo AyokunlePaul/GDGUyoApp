@@ -1,3 +1,6 @@
+import Versions.recyler_view_version
+import org.codehaus.groovy.tools.shell.util.Logger.io
+
 object ApplicationId {
     val application_id = "ng.com.gdg.uyo.android"
 }
@@ -10,11 +13,14 @@ object Releases {
 object Modules {
     val domain = ":domain"
     val data = ":data"
+    val firebase = ":firebase"
+    val local = ":local"
+    val presentation = ":presentation"
 }
 
 object Versions {
-    val support = "28.0.0-alpha3"
-    val constrainst_layout = "1.1.2"
+    val support = "1.0.0"
+    val constrainst_layout = "1.1.3"
     val kotlin = "1.2.61"
     val glide = "4.6.1"
     val room = "1.1.1"
@@ -22,7 +28,7 @@ object Versions {
     val firebaseMessaging = "17.4.0"
     val gson = "2.8.2"
     val hockeyapp = "5.1.1"
-    val lifecycle = "1.1.1"
+    val lifecycle = "2.0.0-rc01"
     val appCenterSdkVersion = "1.11.4"
     val compile_sdk = 28
     val min_sdk = 19
@@ -35,38 +41,65 @@ object Versions {
     val roboelectric = "4.1"
     val androidSupportRunnerVersion = "1.0.0"
     val androidSupportRulesVersion = "1.0.0"
+    val lifecycle_version = "2.0.0"
+    val firebase_core_version = "16.0.8"
+    val firebase_auth_version = "16.2.0"
+    val firebase_firestore_version = "18.1.0"
+    val firebase_storage_version = "16.1.0"
+    val google_services_version = "4.0.2"
+    val rxandroid = "2.0.2"
+    val rxkotlin = "2.2.0"
+    val databinding = "3.3.1"
+    val nav_version = "2.0.0"
+    val recyler_view_version = "1.0.0"
+    val play_service = "16.0.1"
 }
 
 object Libraries {
 
     val kotlin_stdlib = "org.jetbrains.kotlin:kotlin-stdlib:${Versions.kotlin}"
 
+    val rxandroid = "io.reactivex.rxjava2:rxandroid:${Versions.rxandroid}"
+    val rxkotlin = "io.reactivex.rxjava2:rxkotlin:${Versions.rxkotlin}"
+
     val glide = "com.github.bumptech.glide:glide:${Versions.glide}"
     val glide_compiler = "com.github.bumptech.glide:compiler:${Versions.glide}"
 
-    val lifecycle_extensions = "android.arch.lifecycle:extensions:${Versions.lifecycle}"
-    val lifecycle_compiler = "android.arch.lifecycle:compiler:${Versions.lifecycle}"
+    val lifecycle_extensions = "androidx.lifecycle:lifecycle-extensions:${Versions.lifecycle}"
+    val lifecycle_compiler = "androidx.lifecycle:lifecycle-compiler${Versions.lifecycle}"
+    val play_service_auth = "com.google.android.gms:play-services-auth:${Versions.play_service}"
 
+    val databinding_compiler = "com.android.databinding:compiler: ${Versions.databinding}"
     val room_runtime = "android.arch.persistence.room:runtime:${Versions.room}"
     val room_complier = "android.arch.persistence.room:compiler:${Versions.room}"
     val rxroom = "android.arch.persistence.room:rxjava2:${Versions.rxroom}"
     val gson = "com.google.code.gson:gson:${Versions.gson}"
 
+    val firebaseCore = "com.google.firebase:firebase-core:${Versions.firebase_core_version}"
+    val firestore = "com.google.firebase:firebase-firestore:${Versions.firebase_firestore_version}"
+    val firebaseStorage = "com.google.firebase:firebase-storage:${Versions.firebase_storage_version}"
+    val firebaseAuth = "com.google.firebase:firebase-auth:${Versions.firebase_auth_version}"
     val firebaseCloudMessaging = "com.google.firebase:firebase-messaging:${Versions.firebaseMessaging}"
+
+
+    val nav_fragment = "androidx.navigation:navigation-fragment-ktx:${Versions.nav_version}"
+    val nav_ui = "androidx.navigation:navigation-ui:${Versions.nav_version}"
+
     val appCenterCrashlytics = "com.microsoft.appcenter:appcenter-crashes:${Versions.appCenterSdkVersion}"
     val appCenterAnalytics = "com.microsoft.appcenter:appcenter-analytics:${Versions.appCenterSdkVersion}"
 
 }
 
 object SupportLibraries {
-    val appcompat_v7 = "com.android.support:appcompat-v7:${Versions.support}"
-    val design = "com.android.support:design:${Versions.support}"
-    val cardview_v7 = "com.android.support:cardview-v7:${Versions.support}"
-    val recyclerview_v7 = "com.android.support:recyclerview-v7:${Versions.support}"
-    val constraintLayout = "com.android.support.constraint:constraint-layout:${Versions.constrainst_layout}"
-    val support = "com.android.support:support-v4:${Versions.support}"
+    val appcompat_v7 = "androidx.appcompat:appcompat:${Versions.support}"
+    val design = "com.google.android.material:material:1.0.0-rc01"
+    val cardview_v7 = "androidx.cardview:cardview:${Versions.support}"
+    val recyclerview = "androidx.recyclerview:recyclerview:${Versions.recyler_view_version}"
+    val constraintLayout = "androidx.constraintlayout:constraintlayout:${Versions.constrainst_layout}"
+    val support = "androidx.legacy:legacy-support-v4:${Versions.support}"
     val support_vector = "com.android.support:support-vector-drawable:${Versions.support}"
 }
+
 object TestLibraries {
     val junit = "junit:junit:${Versions.junit}"
     val assertj_core = "org.assertj:assertj-core:${Versions.assertj_core}"
@@ -85,5 +118,5 @@ object TestLibraries {
 
 
 object Config {
-    val testRunner = "android.support.test.runner.AndroidJUnitRunner"
+    val testRunner = "androidx.test.runner.AndroidJUnitRunner"
 }

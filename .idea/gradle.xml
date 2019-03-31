@@ -11,6 +11,9 @@
             <option value="$PROJECT_DIR$/buildSrc" />
             <option value="$PROJECT_DIR$/data" />
             <option value="$PROJECT_DIR$/domain" />
+            <option value="$PROJECT_DIR$/firebase" />
+            <option value="$PROJECT_DIR$/local" />
+            <option value="$PROJECT_DIR$/mobile-ui" />
             <option value="$PROJECT_DIR$/presentation" />
           </set>
         </option>

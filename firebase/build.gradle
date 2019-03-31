@@ -1,5 +1,6 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 28
@@ -27,12 +28,12 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation Libraries.kotlin_stdlib
-    implementation project(Modules.domain)
     implementation project(Modules.data)
-    implementation project(Modules.local)
-    implementation project(Modules.firebase)
-    testImplementation 'junit:junit:4.12'
+    implementation Libraries.kotlin_stdlib
+    implementation Libraries.firestore
+    implementation Libraries.firebaseCore
+    implementation Libraries.firebaseAuth
+    implementation Libraries.firebaseStorage
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }
